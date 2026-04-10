@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkasan Istanbul - Webora Tarafından Tasarlandı</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #8B4513 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        
+        nav {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #8B4513;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section {
+            margin: 80px 0;
+        }
+        
+        .section h2 {
+            color: #1a1a1a;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #8B4513;
+            padding-bottom: 10px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid #8B4513;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature h3 {
+            color: #8B4513;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .feature p {
+            line-height: 1.8;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f0f0" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            border-radius: 8px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .hero-section h2 {
+            color: white;
+            border: none;
+            padding: 0;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .hero-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #8B4513;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #f9f9f9 0%, white 100%);
+            padding: 40px;
+            border-radius: 8px;
+            border: 2px solid #8B4513;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info h3 {
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .contact-method {
+            margin: 20px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .contact-method strong {
+            color: #8B4513;
+        }
+        
+        .contact-method a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+        
+        .about-text {
+            font-size: 1.1em;
+            line-height: 2;
+            margin: 20px 0;
+            text-align: justify;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+        
+        footer p {
+            opacity: 0.8;
+            margin: 10px 0;
+        }
+        
+        footer a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .section h2 {
+                font-size: 1.8em;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            .hero-section h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🍜 Hakkasan Istanbul</h1>
+        <p>Fine Dining Chinese Cuisine</p>
+        <p class="tagline">Bosphorus'un Ufkunda Dünya Sınıfı Deneyim</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#hakkimizda">Hakkımızda</a></li>
+            <li><a href="#hizmetler">Özellikler</a></li>
+            <li><a href="#atmoz">Ortam</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="hakkimizda" class="section">
+            <h2>Hakkımızda</h2>
+            <p class="about-text">
+                Hakkasan Istanbul, Mandarin Oriental Bosphorus'ta konumlanmış, İstanbul'un en prestijli 
+                lokasyonlarından birinde yer almaktadır. Galata Kulesinden Boğaz'a kadar uzanan 180 derece 
+                panoramik manzaralar ile birlikte, dünya sınıfı Çin mutfağını sunmaktayız.
+            </p>
+            <p class="about-text">
+                Uluslararası arenada tanınmış ve ödüllü şeflerimiz tarafından hazırlanan özel menüler, 
+                misafirlerimize unutulmaz bir gastronomik deneyim sunmaktadır. Her ayrıntı, her tatı, 
+                her sunum, mükemmellik için tasarlanmıştır.
+            </p>
+        </section>
+        
+        <section id="hizmetler" class="section">
+            <h2>Neden Hakkasan'ı Seçmelisiniz?</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>🌟 Dünya Sınıfı Şefler</h3>
+                    <p>
+                        Uluslararası ödüllü şeflerimiz, modern Çin mutfağının en iyi örneklerini sunmaktadırlar. 
+                        Her yemek, bir sanat eseriyüksek kalite ve titizlik ile hazırlanır.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>🏢 Lüksün Tanımı</h3>
+                    <p>
+                        Mandarin Oriental'in imkânları ve Hakkasan'ın tasarımı bir araya gelerek, 
+                        en şık ve rahat ortamı oluşturmaktadır. Kumral aydınlatma ve modern dekorasyon.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>🍷 Premium Şarap Seçimi</h3>
+                    <p>
+                        Dünyaca ünlü çarap ve kokteyl seçkisinin yanı sıra, özel tasarlanmış içecekleri 
+                        deneyimleyebilirsiniz. Her içecek, yemenin tadını daha da arttırmak için seçilmiştir.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>🎭 Özel Etkinlikler</h3>
+                    <p>
+                        Özel günlerinizi kutlamak için Hakkasan Istanbul, özel etkinlik paketleri 
+                        ve private dining seçenekleri sunar.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>👨‍🍳 Tasting Menü</h3>
+                    <p>
+                        Şefin özel seçimi ile hazırlanan tasting menü, İstanbul'daki en istenen deneyimlerden biridir. 
+                        Her sezon yeni yaratımlar.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>🌐 Boğaz Manzarası</h3>
+                    <p>
+                        Gün batımında Boğaz'ı izlemek, akşam yemeğinizi daha romantik hale getirmektedir. 
+                        Doğal güzellikle modern lüksenin birleşimi.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="atmoz" class="section">
+            <h2>Ortam & Tasarım</h2>
+            <p class="about-text">
+                Hakkasan'ın tasarımı, sanatsal niyetleriyle sofistike bir deneyim sunmaktadır. 
+                Koyu renk paleti ve modern dekorasyon, intim bir atmosfer yaratır. Her masada, 
+                Boğaz'ın manzarası ve şehrin yanardöner ışıkları görülmektedir.
+            </p>
+            <div class="hero-section">
+                <h2>Resepsiyon Ekibimizle İletişime Geçin</h2>
+                <p>Özel etkinlikler ve rezervasyonlar için bize ulaşabilirsiniz</p>
+                <button class="cta-button">📞 Hemen Arayın</button>
+                <button class="cta-button">📧 Email Gönder</button>
+            </div>
+        </section>
+        
+        <section id="iletisim" class="section">
+            <h2>İletişim Bilgileri</h2>
+            <div class="contact-info">
+                <h3>📍 Bize Ulaşın</h3>
+                
+                <div class="contact-method">
+                    <strong>🏨 Konum:</strong><br>
+                    Mandarin Oriental Bosphorus<br>
+                    Istanbul, Turkey
+                </div>
+                
+                <div class="contact-method">
+                    <strong>📞 Telefon:</strong><br>
+                    <a href="tel:+902123498848">+90 212 349 88 48</a>
+                </div>
+                
+                <div class="contact-method">
+                    <strong>📧 Email:</strong><br>
+                    <a href="mailto:reservation@hakkasanistanbul.com">reservation@hakkasanistanbul.com</a>
+                </div>
+                
+                <div class="contact-method">
+                    <strong>💬 WhatsApp:</strong><br>
+                    <a href="https://wa.me/905212349848">+90 212 349 88 48</a>
+                </div>
+                
+                <div class="contact-method">
+                    <strong>⏰ Açık Saatler:</strong><br>
+                    Detaylı bilgi için iletişime geçiniz
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>© 2026 Hakkasan Istanbul. Resepsiyon ve Rezervasyonlar: +90 212 349 88 48</p>
+        <p style="margin-top: 20px; font-size: 0.9em;">
+            Bu sayfa Webora Agency tarafından özel olarak tasarlanmıştır.<br>
+            <a href="https://webora.agency">webora.agency</a> | Modern Web Tasarım & Dijital Çözümler
+        </p>
+    </footer>
+</body>
+</html>
